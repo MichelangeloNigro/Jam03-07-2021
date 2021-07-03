@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8108755574348226081
+--- !u!1 &1927822486582119088
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,36 +8,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8108755574348226082}
-  - component: {fileID: 8108755574348226083}
+  - component: {fileID: 1070198909499304560}
+  - component: {fileID: 9035914514827032630}
   m_Layer: 0
-  m_Name: white-dwarf-star
+  m_Name: blackHolesSpritesheet_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8108755574348226082
+--- !u!4 &1070198909499304560
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8108755574348226081}
+  m_GameObject: {fileID: 1927822486582119088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 2.8, z: -16.211803}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: -0.17, y: 3.16, z: -16.211803}
+  m_LocalScale: {x: 2.1653824, y: 2.0608647, z: 1}
   m_Children: []
   m_Father: {fileID: 8108755574591459075}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8108755574348226083
+--- !u!212 &9035914514827032630
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8108755574348226081}
+  m_GameObject: {fileID: 1927822486582119088}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,12 +70,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a27406c97e517164cbd7003354e6739c, type: 3}
+  m_Sprite: {fileID: -2583787505490634562, guid: 766e7d9b549135543860d1fa2eb7728f,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 0.81, y: 0.82}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -276,7 +277,7 @@ Transform:
   - {fileID: 8108755574410513434}
   - {fileID: 8108755575622304093}
   - {fileID: 8108755575994204501}
-  - {fileID: 8108755574348226082}
+  - {fileID: 1070198909499304560}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
