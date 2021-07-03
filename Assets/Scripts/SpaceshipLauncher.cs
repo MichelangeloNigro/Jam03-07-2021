@@ -79,6 +79,7 @@ public class SpaceshipLauncher : MonoBehaviour
     {
         transform.Rotate(0, 0, 180);
         player.planetToRotate = collision.gameObject;
+        player.transform.up = (player.transform.position-player.planetToRotate.transform.position).normalized;
         rb.velocity = Vector2.zero;
         canJump = true;
         player.canRotate = true;
