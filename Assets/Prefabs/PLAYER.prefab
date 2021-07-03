@@ -136,7 +136,7 @@ MonoBehaviour:
   canJump: 1
   launchSpeed: 2
   isMoving: 0
-  widthThreshold: {x: 0, y: 0}
-  heightThreshold: {x: 0, y: 0}
+  widthThreshold: {x: -74.67, y: 138.22}
+  heightThreshold: {x: 108.34, y: 133.6}
   deathCanvas: {fileID: 8178291309630523516, guid: 1a93c3a0063a9594a90d33c720c3a6dc,
     type: 3}

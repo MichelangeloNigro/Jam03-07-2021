@@ -18,6 +18,10 @@ public class SpaceshipLauncher : MonoBehaviour
 
     public GameObject deathCanvas;
 
+    public void Awake()
+    {
+        mainCamera = Camera.main;
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,7 +39,7 @@ public class SpaceshipLauncher : MonoBehaviour
 
         if (OutOfScreenSpace())
         {
-            deathCanvas.GetComponent<UiManager>().DeathCanvas.enabled = true;
+            managerUi.DeathCanvas.enabled = true;
             //non vuole funzionare
         }
 
@@ -85,7 +89,7 @@ public class SpaceshipLauncher : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Atmosphere") && collision.gameObject!=player.planetToRotate)
+        if(collision.CompareTag("Planet") && collision.gameObject!=player.planetToRotate)
         {
             if (!collision.gameObject.GetComponent<PlanetController>().isvisit) {
                 managerUi.points += 100;
@@ -124,6 +128,7 @@ public class SpaceshipLauncher : MonoBehaviour
         if (screenPosition.x < widthThreshold.x || screenPosition.x > widthThreshold.y || screenPosition.y < heightThreshold.x || screenPosition.y > heightThreshold.y)
         {
             return true;
+           
         } else
         {
             return false;
