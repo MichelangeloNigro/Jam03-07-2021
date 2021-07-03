@@ -5,12 +5,14 @@ using UnityEngine;
 public class SpaceshipLauncher : MonoBehaviour
 {
     Rigidbody2D rb;
+    UiManager manager;
     // reference scriptRotazione
     //TileManager tileManager;
     bool canJump;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        manager = FindObjectOfType<UiManager>();
         //tileManager = FindObjectOfType<TileManager>();
         //prendersi lo script
     }
@@ -54,6 +56,9 @@ public class SpaceshipLauncher : MonoBehaviour
             if (!collision.gameObject.GetComponent<PlanetController>().endingPlanet)
             {
                 EnterAtmosphere();
+                if(!collision.gameObject.GetComponent<PlanetController>().isvisit)
+                    manager.points += 100;
+
                 //rota;
             }
         }
