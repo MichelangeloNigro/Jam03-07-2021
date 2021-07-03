@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
+    public bool canRotate;
 
     public GameObject planetToRotate;//to get the position in worldspace to which this gameObject will rotate around.
 
@@ -17,7 +17,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Gets the position of your 'Turret' and rotates this gameObject around it by the 'axis' provided at speed 'angle' in degrees per update 
-        transform.RotateAround(planetToRotate.transform.position, axis, angle);
+        if (canRotate)
+        {
+            //Gets the position of your 'Turret' and rotates this gameObject around it by the 'axis' provided at speed 'angle' in degrees per update 
+            transform.RotateAround(planetToRotate.transform.position, axis, angle);
+        }
     }
 }
