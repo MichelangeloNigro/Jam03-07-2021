@@ -7,7 +7,7 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(sceneBuildIndex: 2);
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void ExitApplication()
