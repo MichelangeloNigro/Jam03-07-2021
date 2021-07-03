@@ -7,6 +7,7 @@ public class SpaceshipLauncher : MonoBehaviour
     Rigidbody2D rb;
     PlayerController player;
     TileManager tileManager;
+    UiManager managerUi;
      public bool canJump;
     public float launchSpeed;
    public bool isMoving;
@@ -15,6 +16,7 @@ public class SpaceshipLauncher : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GetComponent<PlayerController>();
         tileManager = FindObjectOfType<TileManager>();
+        managerUi = FindObjectOfType<UiManager>();
     }
     private void Update()
     {
@@ -53,6 +55,7 @@ public class SpaceshipLauncher : MonoBehaviour
         rb.velocity = Vector2.zero;
         canJump = true;
         player.canRotate = true;
+        collision.gameObject.GetComponent<PlanetController>().isvisit = true;
         isMoving = false;
     }
 
@@ -61,6 +64,7 @@ public class SpaceshipLauncher : MonoBehaviour
         player.planetToRotate = collision.gameObject;
         tileManager.SpawnTiles();
         canJump = false;
+        collision.gameObject.GetComponent<PlanetController>().isvisit = true;
         StartCoroutine(WaitForLaunch());
     }
 
@@ -69,6 +73,9 @@ public class SpaceshipLauncher : MonoBehaviour
     {
         if(collision.CompareTag("Atmosphere") && collision.gameObject!=player.planetToRotate)
         {
+            if (!collision.gameObject.GetComponent<PlanetController>().isvisit) {
+                managerUi.points += 100;
+            }
             if (!collision.gameObject.GetComponent<PlanetController>().endingPlanet)
             {
                 EnterAtmosphere(collision);
