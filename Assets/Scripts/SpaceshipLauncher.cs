@@ -5,45 +5,61 @@ using UnityEngine;
 public class SpaceshipLauncher : MonoBehaviour
 {
     Rigidbody2D rb;
-    UiManager manager;
-    // reference scriptRotazione
-    //TileManager tileManager;
-    bool canJump;
+    PlayerController player;
+    TileManager tileManager;
+     public bool canJump;
+    public float launchSpeed;
+   public bool isMoving;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        manager = FindObjectOfType<UiManager>();
-        //tileManager = FindObjectOfType<TileManager>();
-        //prendersi lo script
+        player = GetComponent<PlayerController>();
+        tileManager = FindObjectOfType<TileManager>();
     }
     private void Update()
     {
         Launch();
+        if(isMoving)
+        {
+            transform.Translate(Vector2.up * launchSpeed * Time.deltaTime);
+        }
     }
     void Launch()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (canJump)
         {
-            rb.velocity = Vector2.up;//* velocità di rotazione;
-            //smetti di rotà;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("LAUNCH");
+                       canJump = false;
+                player.canRotate = false;
+                isMoving = true;
+
+
+            }
         }
     }
     void ForceLaunch()
     {
-
-            rb.velocity = Vector2.up;//* velocità di rotazione;
-            //smetti di rotà;
+        rb.velocity = Vector2.up * player.angle;
+        canJump = false;
+        player.canRotate = false;
+        isMoving = true;
 
     }
-    public void EnterAtmosphere()
+    public void EnterAtmosphere(Collider2D collision)
     {
+        player.planetToRotate = collision.gameObject;
         rb.velocity = Vector2.zero;
         canJump = true;
+        player.canRotate = true;
+        isMoving = false;
     }
 
-    public void EnterFinalPlanet()
+    public void EnterFinalPlanet(Collider2D collision)
     {
-        //tileManager.SpawnTiles();
+        player.planetToRotate = collision.gameObject;
+        tileManager.SpawnTiles();
         canJump = false;
         StartCoroutine(WaitForLaunch());
     }
@@ -51,15 +67,15 @@ public class SpaceshipLauncher : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Atmosphere"))
+        if(collision.CompareTag("Atmosphere") && collision.gameObject!=player.planetToRotate)
         {
             if (!collision.gameObject.GetComponent<PlanetController>().endingPlanet)
             {
-                EnterAtmosphere();
-                if(!collision.gameObject.GetComponent<PlanetController>().isvisit)
-                    manager.points += 100;
-
-                //rota;
+                EnterAtmosphere(collision);
+            }
+            else
+            {
+                EnterFinalPlanet(collision);
             }
         }
     }
