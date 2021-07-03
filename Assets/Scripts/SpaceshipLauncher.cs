@@ -19,10 +19,12 @@ public class SpaceshipLauncher : MonoBehaviour
     public GameObject deathCanvas;
 
     public bool isOut;
+    CameraMover cameraMover;
 
     public void Awake()
     {
         mainCamera = Camera.main;
+        cameraMover = FindObjectOfType<CameraMover>();
         isOut = false;
 
         Debug.Log(mainCamera.aspect * mainCamera.orthographicSize);
@@ -71,7 +73,7 @@ public class SpaceshipLauncher : MonoBehaviour
         canJump = false;
         player.canRotate = false;
         isMoving = true;
-
+        cameraMover.ChangeLevel();
     }
     public void EnterAtmosphere(Collider2D collision)
     {
@@ -88,6 +90,7 @@ public class SpaceshipLauncher : MonoBehaviour
     {
         player.planetToRotate = collision.gameObject;
         tileManager.SpawnTiles();
+        rb.velocity = Vector2.zero;
         canJump = false;
         collision.gameObject.GetComponent<PlanetController>().isvisit = true;
         StartCoroutine(WaitForLaunch());

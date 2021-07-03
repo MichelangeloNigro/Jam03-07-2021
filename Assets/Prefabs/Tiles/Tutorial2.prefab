@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4239246266058343742}
   - component: {fileID: 4239246266058343741}
+  - component: {fileID: -2342029058058022080}
   m_Layer: 0
   m_Name: Tutorial2
   m_TagString: Untagged
@@ -87,6 +88,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &-2342029058058022080
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4239246266058343743}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.479998, y: 20.48, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &722059661755829840
 PrefabInstance:
   m_ObjectHideFlags: 0
