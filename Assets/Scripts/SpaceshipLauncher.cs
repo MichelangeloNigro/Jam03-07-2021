@@ -69,6 +69,7 @@ public class SpaceshipLauncher : MonoBehaviour
     }
     public void EnterAtmosphere(Collider2D collision)
     {
+        transform.Rotate(0, 0, 180);
         player.planetToRotate = collision.gameObject;
         rb.velocity = Vector2.zero;
         canJump = true;
@@ -124,9 +125,10 @@ public class SpaceshipLauncher : MonoBehaviour
 
     public bool OutOfScreenSpace()
     {
-        Vector2 screenPosition = mainCamera.WorldToScreenPoint(transform.position);
-        if (screenPosition.x < widthThreshold.x || screenPosition.x > widthThreshold.y || screenPosition.y < heightThreshold.x || screenPosition.y > heightThreshold.y)
+        Vector2 screenPosition = mainCamera.ScreenToWorldPoint(transform.position);
+        if (screenPosition.x < -(mainCamera.rect.width) || screenPosition.x > mainCamera.rect.width || screenPosition.y < -(mainCamera.rect.height) || screenPosition.y > mainCamera.rect.height)
         {
+            Debug.Log("uscito");
             return true;
            
         } else
