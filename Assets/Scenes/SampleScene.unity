@@ -652,6 +652,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Death
       objectReference: {fileID: 0}
+    - target: {fileID: 910380187777537679, guid: db5ba52712169b541b103f86577cc6c0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db5ba52712169b541b103f86577cc6c0, type: 3}
 --- !u!223 &1029298152 stripped
