@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5208739647537967445}
   m_Layer: 0
   m_Name: blackHolesSpritesheet_0
-  m_TagString: Untagged
+  m_TagString: BlackHole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2583787505490634562, guid: 766e7d9b549135543860d1fa2eb7728f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
