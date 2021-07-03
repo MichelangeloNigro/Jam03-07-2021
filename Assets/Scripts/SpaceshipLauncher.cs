@@ -90,6 +90,7 @@ public class SpaceshipLauncher : MonoBehaviour
     {
         player.planetToRotate = collision.gameObject;
         tileManager.SpawnTiles();
+        rb.velocity = Vector2.zero;
         canJump = false;
         collision.gameObject.GetComponent<PlanetController>().isvisit = true;
         StartCoroutine(WaitForLaunch());
