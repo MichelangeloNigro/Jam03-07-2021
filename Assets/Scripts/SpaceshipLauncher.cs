@@ -11,6 +11,11 @@ public class SpaceshipLauncher : MonoBehaviour
      public bool canJump;
     public float launchSpeed;
    public bool isMoving;
+
+    private Camera mainCamera;
+    public Vector2 widthThreshold;
+    public Vector2 heightThreshold;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,6 +30,12 @@ public class SpaceshipLauncher : MonoBehaviour
         {
             transform.Translate(Vector2.up * launchSpeed * Time.deltaTime);
         }
+
+        if (OutOfScreenSpace())
+        {
+            // sei morto, codice di morte
+        }
+
     }
     void Launch()
     {
@@ -101,6 +112,18 @@ public class SpaceshipLauncher : MonoBehaviour
                 ForceLaunch();
             }
             yield return null;
+        }
+    }
+
+    public bool OutOfScreenSpace()
+    {
+        Vector2 screenPosition = mainCamera.WorldToScreenPoint(transform.position);
+        if (screenPosition.x < widthThreshold.x || screenPosition.x > widthThreshold.y || screenPosition.y < heightThresold.x || screenPosition.y > heightThresold.y)
+        {
+            return true;
+        } else
+        {
+            return false;
         }
     }
 }
