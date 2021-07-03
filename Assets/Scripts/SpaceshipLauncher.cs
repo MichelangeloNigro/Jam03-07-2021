@@ -113,6 +113,13 @@ public class SpaceshipLauncher : MonoBehaviour
                 EnterFinalPlanet(collision);
             }
         }
+        if (collision.CompareTag("BlackHole") && collision.gameObject != player.planetToRotate)
+        {
+
+            Time.timeScale = 0;
+            managerUi.DeathCanvas.enabled = true;
+        }
+
     }
 
 
