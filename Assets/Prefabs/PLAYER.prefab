@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 8d8c77cd00e66f144af240f9dac9f1dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1c06b52f706a246a6ddfff59a5444e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canRotate: 1
   planetToRotate: {fileID: 0}
   axis: {x: 0, y: 0, z: 3}
   angle: 10
@@ -132,3 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c420018a575ce428085b0192ed6ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canJump: 1
+  launchSpeed: 2
+  isMoving: 0
