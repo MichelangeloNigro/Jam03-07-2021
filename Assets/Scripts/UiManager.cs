@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class UiManager : MonoBehaviour
 {
     public Text point;
@@ -19,6 +20,11 @@ public class UiManager : MonoBehaviour
 
     public void Update() {
         point.text = "Punteggio: " + points.ToString();
+    }
+
+
+    public void Restart() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
