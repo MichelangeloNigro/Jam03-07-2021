@@ -26,6 +26,7 @@ public class SpaceshipLauncher : MonoBehaviour
     public void EnterAtmosphere()
     {
         rb.velocity = Vector2.zero;
+        //rota;
     }
 
 
@@ -34,7 +35,6 @@ public class SpaceshipLauncher : MonoBehaviour
         if(collision.CompareTag("Atmosphere"))
         {
             EnterAtmosphere();
-            //rota;
         }
     }
 }
