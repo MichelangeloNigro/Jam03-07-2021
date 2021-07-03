@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 171287164}
   - component: {fileID: 171287163}
   - component: {fileID: 171287166}
+  - component: {fileID: 171287167}
   m_Layer: 0
   m_Name: PLAYER
   m_TagString: Untagged
@@ -237,10 +238,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1c06b52f706a246a6ddfff59a5444e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeCounter: 0
-  planetCollider: {fileID: 7071014223379380199}
-  centerPlanet: {x: 0, y: 0}
-  offset: 0.5
+  planetToRotate: {fileID: 7071014223379380196}
+  axis: {x: 0, y: 0, z: 3}
+  angle: 10
+--- !u!114 &171287167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171287162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c420018a575ce428085b0192ed6ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &462714710
 GameObject:
   m_ObjectHideFlags: 0
