@@ -72,8 +72,9 @@ public class SpaceshipLauncher : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Atmosphere") && collision.gameObject != player.planetToRotate)
+        if (collision.CompareTag("Planet") /*&& collision.gameObject != player.planetToRotate*/)
         {
+            Debug.Log("Ok");
             if (!collision.gameObject.GetComponent<PlanetController>().isvisit) {
                 managerUi.points += 100;
             }
