@@ -11,6 +11,7 @@ public class SpaceshipLauncher : MonoBehaviour
      public bool canJump;
     public float launchSpeed;
    public bool isMoving;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -71,7 +72,7 @@ public class SpaceshipLauncher : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Atmosphere") && collision.gameObject!=player.planetToRotate)
+        if (collision.CompareTag("Atmosphere") && collision.gameObject != player.planetToRotate)
         {
             if (!collision.gameObject.GetComponent<PlanetController>().isvisit) {
                 managerUi.points += 100;
@@ -84,6 +85,11 @@ public class SpaceshipLauncher : MonoBehaviour
             {
                 EnterFinalPlanet(collision);
             }
+        }
+        if (collision.CompareTag("BlackHole") && collision.gameObject != player.planetToRotate) {
+            Time.timeScale = 0;
+            managerUi.DeathCanvas.enabled = true;
+
         }
     }
 

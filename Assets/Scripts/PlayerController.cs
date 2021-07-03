@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
         if (canRotate)
         {
             //Gets the position of your 'Turret' and rotates this gameObject around it by the 'axis' provided at speed 'angle' in degrees per update 
-            transform.RotateAround(planetToRotate.transform.position, axis, angle);
+            transform.RotateAround(planetToRotate.transform.position, axis, angle*Time.deltaTime);
         }
     }
 }
