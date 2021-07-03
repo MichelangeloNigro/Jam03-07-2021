@@ -16,6 +16,8 @@ public class SpaceshipLauncher : MonoBehaviour
     public Vector2 widthThreshold;
     public Vector2 heightThreshold;
 
+    public GameObject deathCanvas;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,7 +35,8 @@ public class SpaceshipLauncher : MonoBehaviour
 
         if (OutOfScreenSpace())
         {
-            // sei morto, codice di morte
+            deathCanvas.GetComponent<UiManager>().DeathCanvas.enabled = true;
+            //non vuole funzionare
         }
 
     }
@@ -118,7 +121,7 @@ public class SpaceshipLauncher : MonoBehaviour
     public bool OutOfScreenSpace()
     {
         Vector2 screenPosition = mainCamera.WorldToScreenPoint(transform.position);
-        if (screenPosition.x < widthThreshold.x || screenPosition.x > widthThreshold.y || screenPosition.y < heightThresold.x || screenPosition.y > heightThresold.y)
+        if (screenPosition.x < widthThreshold.x || screenPosition.x > widthThreshold.y || screenPosition.y < heightThreshold.x || screenPosition.y > heightThreshold.y)
         {
             return true;
         } else
