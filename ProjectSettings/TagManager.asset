@@ -7,6 +7,7 @@ TagManager:
   - Atmosphere
   - BlackHole
   - Planet
+  - Launch
   layers:
   - Default
   - TransparentFX

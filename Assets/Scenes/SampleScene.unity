@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77c4e680845e1e43b95395ba09a524a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 4
   tileSample: {fileID: 5612309263733159633}
 --- !u!1001 &1029298151
 PrefabInstance:

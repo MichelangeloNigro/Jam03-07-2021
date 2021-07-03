@@ -22,7 +22,7 @@ public class CameraMover : MonoBehaviour
     public IEnumerator Slide()
     {
         var XPos = transform.position.x;
-        while (transform.position.x < transform.position.x + tileSample.GetComponent<BoxCollider2D>().size.x)
+        while (transform.position.x < XPos + tileSample.GetComponent<BoxCollider2D>().size.x)
         {
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
             yield return null;

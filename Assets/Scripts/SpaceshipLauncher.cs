@@ -69,7 +69,6 @@ public class SpaceshipLauncher : MonoBehaviour
     }
     void ForceLaunch()
     {
-        rb.velocity = Vector2.up * player.angle;
         canJump = false;
         player.canRotate = false;
         isMoving = true;
@@ -89,13 +88,18 @@ public class SpaceshipLauncher : MonoBehaviour
 
     public void EnterFinalPlanet(Collider2D collision)
     {
+        transform.Rotate(0, 0, 180);
+ 
         player.planetToRotate = collision.gameObject;
+        player.transform.up = (player.transform.position - player.planetToRotate.transform.position).normalized;
         tileManager.SpawnTiles();
         rb.velocity = Vector2.zero;
         canJump = false;
+        isMoving = false;
+        player.canRotate = true;
         collision.gameObject.GetComponent<PlanetController>().isvisit = true;
-        StartCoroutine(WaitForLaunch());
     }
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -120,25 +124,29 @@ public class SpaceshipLauncher : MonoBehaviour
             Time.timeScale = 0;
             managerUi.DeathCanvas.enabled = true;
         }
-
-    }
-
-
-    private IEnumerator WaitForLaunch()
-    {
-        var jumped = false;
-        while(!jumped)
+        if(collision.CompareTag("Launch"))
         {
-          var angle=Vector3.Angle(this.gameObject.transform.eulerAngles, transform.forward);
-            Debug.Log(angle);
-            if(angle==0)
-            {
-                jumped = true;
-                ForceLaunch();
-            }
-            yield return null;
+            ForceLaunch();
         }
+
     }
+
+
+    //private IEnumerator WaitForLaunch()
+    //{
+    //    var jumped = false;
+    //    while(!jumped)
+    //    {
+    //      var angle=Vector3.Angle(this.gameObject.transform.eulerAngles, transform.forward);
+    //        Debug.Log(angle);
+    //        if(angle==0)
+    //        {
+    //            jumped = true;
+    //            ForceLaunch();
+    //        }
+    //        yield return null;
+    //    }
+    //}
 
     /*public void OutOfScreenSpace()
     {
