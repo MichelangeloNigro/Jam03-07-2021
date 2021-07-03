@@ -4,24 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	[HideInInspector] public float timeCounter = 0;
-    public CircleCollider2D planetCollider;
-    public Vector2 centerPlanet;
-    public float offset;
+    
 
-    public void Start()
+    public GameObject planetToRotate;//to get the position in worldspace to which this gameObject will rotate around.
+
+    [Header("Settate solo la z")]
+    public Vector3 axis;//by which axis it will rotate. x,y or z.
+
+    [Header("Velocità di rotazione")]
+    public float angle; //or the speed of rotation.
+
+    // Update is called once per frame
+    void Update()
     {
-        centerPlanet = planetCollider.bounds.center;
-    }
-
-    public void Update()
-    {
-        timeCounter += Time.deltaTime;
-
-        float x = Mathf.Cos(timeCounter);
-        float y = Mathf.Sin(timeCounter);
-        //float z = Mathf.Cos(timeCounter);
-
-        transform.position = centerPlanet + new Vector2 (x*offset, y*offset);
+        //Gets the position of your 'Turret' and rotates this gameObject around it by the 'axis' provided at speed 'angle' in degrees per update 
+        transform.RotateAround(planetToRotate.transform.position, axis, angle);
     }
 }
