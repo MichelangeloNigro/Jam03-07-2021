@@ -6,4 +6,5 @@ public class PlanetController : MonoBehaviour
 {
     public bool startingPlanet;
     public bool endingPlanet;
+    public bool isvisit;
 }
