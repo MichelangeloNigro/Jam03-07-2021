@@ -12,6 +12,12 @@ public class SpaceshipLauncher : MonoBehaviour
     public float launchSpeed;
    public bool isMoving;
 
+    private Camera mainCamera;
+    public Vector2 widthThreshold;
+    public Vector2 heightThreshold;
+
+    public GameObject deathCanvas;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,6 +32,13 @@ public class SpaceshipLauncher : MonoBehaviour
         {
             transform.Translate(Vector2.up * launchSpeed * Time.deltaTime);
         }
+
+        if (OutOfScreenSpace())
+        {
+            deathCanvas.GetComponent<UiManager>().DeathCanvas.enabled = true;
+            //non vuole funzionare
+        }
+
     }
     void Launch()
     {
@@ -72,9 +85,8 @@ public class SpaceshipLauncher : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Planet") /*&& collision.gameObject != player.planetToRotate*/)
+        if(collision.CompareTag("Atmosphere") && collision.gameObject!=player.planetToRotate)
         {
-            Debug.Log("Ok");
             if (!collision.gameObject.GetComponent<PlanetController>().isvisit) {
                 managerUi.points += 100;
             }
@@ -86,11 +98,6 @@ public class SpaceshipLauncher : MonoBehaviour
             {
                 EnterFinalPlanet(collision);
             }
-        }
-        if (collision.CompareTag("BlackHole") && collision.gameObject != player.planetToRotate) {
-            Time.timeScale = 0;
-            managerUi.DeathCanvas.enabled = true;
-
         }
     }
 
@@ -108,6 +115,18 @@ public class SpaceshipLauncher : MonoBehaviour
                 ForceLaunch();
             }
             yield return null;
+        }
+    }
+
+    public bool OutOfScreenSpace()
+    {
+        Vector2 screenPosition = mainCamera.WorldToScreenPoint(transform.position);
+        if (screenPosition.x < widthThreshold.x || screenPosition.x > widthThreshold.y || screenPosition.y < heightThreshold.x || screenPosition.y > heightThreshold.y)
+        {
+            return true;
+        } else
+        {
+            return false;
         }
     }
 }
