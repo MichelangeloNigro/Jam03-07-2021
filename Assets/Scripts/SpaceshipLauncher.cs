@@ -18,9 +18,15 @@ public class SpaceshipLauncher : MonoBehaviour
 
     public GameObject deathCanvas;
 
+    public bool isOut;
+
     public void Awake()
     {
         mainCamera = Camera.main;
+        isOut = false;
+
+        Debug.Log(mainCamera.aspect * mainCamera.orthographicSize);
+        Debug.Log(mainCamera.rect.height);
     }
     private void Start()
     {
@@ -37,7 +43,7 @@ public class SpaceshipLauncher : MonoBehaviour
             transform.Translate(Vector2.up * launchSpeed * Time.deltaTime);
         }
 
-        if (OutOfScreenSpace())
+        if (isOut)
         {
             managerUi.DeathCanvas.enabled = true;
             //non vuole funzionare
@@ -123,18 +129,23 @@ public class SpaceshipLauncher : MonoBehaviour
         }
     }
 
-    public bool OutOfScreenSpace()
+    /*public void OutOfScreenSpace()
     {
-        Vector2 screenPosition = mainCamera.ScreenToWorldPoint(transform.position);
-        if (screenPosition.x < -(mainCamera.rect.width) || screenPosition.x > mainCamera.rect.width || screenPosition.y < -(mainCamera.rect.height) || screenPosition.y > mainCamera.rect.height)
+       Vector2 screenPosition = mainCamera.ScreenToWorldPoint(transform.position);
+        if (screenPosition.x < -((mainCamera.aspect * mainCamera.orthographicSize)) || screenPosition.x > (mainCamera.aspect * mainCamera.orthographicSize) || screenPosition.y < -(mainCamera.rect.height) || screenPosition.y > mainCamera.rect.height)
         {
             Debug.Log("uscito");
-            return true;
+            isOut = true;
            
         } else
         {
-            return false;
+            isOut = false;
         }
+    } */
+
+    void OnBecameInvisible()
+    {
+        isOut = true;
     }
 }
 
