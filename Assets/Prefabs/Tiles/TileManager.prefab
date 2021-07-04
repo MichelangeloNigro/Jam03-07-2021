@@ -50,3 +50,4 @@ MonoBehaviour:
   - {fileID: 897931816710691536, guid: 8a28946d661adff48bd94c8074406735, type: 3}
   lastTile: {fileID: 0}
   offestX: 42
+  parent: {fileID: 0}

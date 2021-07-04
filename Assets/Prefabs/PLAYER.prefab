@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2516041008371742248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.09, y: 2.32, z: 0}
-  m_LocalScale: {x: 0.21715535, y: 0.22935033, z: 0.30876714}
+  m_LocalScale: {x: 0.21715535, y: 0.22935031, z: 0.30876714}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   canRotate: 1
   planetToRotate: {fileID: 0}
   axis: {x: 0, y: 0, z: 3}
-  angle: 10
+  angle: 50
 --- !u!114 &2516041008371742253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,3 +140,4 @@ MonoBehaviour:
   heightThreshold: {x: 108.34, y: 133.6}
   deathCanvas: {fileID: 8178291309630523516, guid: 1a93c3a0063a9594a90d33c720c3a6dc,
     type: 3}
+  isOut: 0

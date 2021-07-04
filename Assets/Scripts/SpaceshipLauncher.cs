@@ -60,7 +60,7 @@ public class SpaceshipLauncher : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("LAUNCH");
-                       canJump = false;
+                canJump = false;
                 player.canRotate = false;
                 isMoving = true;
 
