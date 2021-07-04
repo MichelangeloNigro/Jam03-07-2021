@@ -7,6 +7,7 @@ public class CameraMover : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] GameObject tileSample;
     Animator animator;
+    public TileManager manager;
 
     private void Start()
     {
@@ -22,10 +23,11 @@ public class CameraMover : MonoBehaviour
     public IEnumerator Slide()
     {
         var XPos = transform.position.x;
-        while (transform.position.x < transform.position.x + tileSample.GetComponent<BoxCollider2D>().size.x)
+        while (transform.position.x < manager.lastTile.transform.position.x+0.01f)
         {
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
             yield return null;
         }
+        manager.SpawnTiles();
     }
 }

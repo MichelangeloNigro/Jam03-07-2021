@@ -10,7 +10,8 @@ public class SpaceshipLauncher : MonoBehaviour
     UiManager managerUi;
      public bool canJump;
     public float launchSpeed;
-   public bool isMoving;
+    public bool isMoving;
+    bool isLanuched;
 
     private Camera mainCamera;
     public Vector2 widthThreshold;
@@ -69,7 +70,9 @@ public class SpaceshipLauncher : MonoBehaviour
     }
     void ForceLaunch()
     {
-        rb.velocity = Vector2.up * player.angle;
+        //rb.velocity = Vector2.up * player.angle;
+        Debug.Log("Maybe");
+        transform.Translate(Vector2.up * launchSpeed * Time.deltaTime);
         canJump = false;
         player.canRotate = false;
         isMoving = true;
@@ -89,11 +92,14 @@ public class SpaceshipLauncher : MonoBehaviour
 
     public void EnterFinalPlanet(Collider2D collision)
     {
+        isMoving = false;
         player.planetToRotate = collision.gameObject;
-        tileManager.SpawnTiles();
+        player.transform.up = (player.transform.position - player.planetToRotate.transform.position).normalized;
         rb.velocity = Vector2.zero;
+        player.canRotate = true;
         canJump = false;
         collision.gameObject.GetComponent<PlanetController>().isvisit = true;
+        
         StartCoroutine(WaitForLaunch());
     }
 
@@ -126,18 +132,25 @@ public class SpaceshipLauncher : MonoBehaviour
 
     private IEnumerator WaitForLaunch()
     {
-        var jumped = false;
-        while(!jumped)
+        
+        var x = Mathf.Deg2Rad * this.gameObject.transform.eulerAngles.z;      
+        var cos = (Mathf.Sin(x));
+
+        Debug.Log(cos);
+        while ( (1-Mathf.Abs(cos)>0.001f) || cos>0 )
         {
-          var angle=Vector3.Angle(this.gameObject.transform.eulerAngles, transform.forward);
-            Debug.Log(angle);
-            if(angle==0)
-            {
-                jumped = true;
-                ForceLaunch();
+            Debug.Log(cos);
+            x = Mathf.Deg2Rad * this.gameObject.transform.eulerAngles.z;
+            if (x > 360) {
+                x = 0;
             }
+            cos = (Mathf.Sin(x));
+            
+            
+           
             yield return null;
         }
+        ForceLaunch();
     }
 
     /*public void OutOfScreenSpace()

@@ -542,8 +542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77c4e680845e1e43b95395ba09a524a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 10
   tileSample: {fileID: 5612309263733159633}
+  manager: {fileID: 1677131464}
 --- !u!1001 &1029298151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -674,6 +675,18 @@ Canvas:
     type: 3}
   m_PrefabInstance: {fileID: 1029298151}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1677131464 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2620807624127118161, guid: eec17ff209ffdd849b2c5bf3cd33c5df,
+    type: 3}
+  m_PrefabInstance: {fileID: 5612309263733159632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17931f3e8fc5d834fb0d755f059be648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1765761219 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5228624597505496477, guid: eec17ff209ffdd849b2c5bf3cd33c5df,
