@@ -8,7 +8,7 @@ public class SpaceshipLauncher : MonoBehaviour
     PlayerController player;
     TileManager tileManager;
     UiManager managerUi;
-     public bool canJump;
+    public bool canJump;
     public float launchSpeed;
     public bool isMoving;
     bool isLanuched;
@@ -21,15 +21,13 @@ public class SpaceshipLauncher : MonoBehaviour
 
     public bool isOut;
     CameraMover cameraMover;
+    public SO_SFX death;
 
     public void Awake()
     {
-        mainCamera = Camera.main;
-        cameraMover = FindObjectOfType<CameraMover>();
-        isOut = false;
+       
 
-        Debug.Log(mainCamera.aspect * mainCamera.orthographicSize);
-        Debug.Log(mainCamera.rect.height);
+     
     }
     private void Start()
     {
@@ -37,6 +35,11 @@ public class SpaceshipLauncher : MonoBehaviour
         player = GetComponent<PlayerController>();
         tileManager = FindObjectOfType<TileManager>();
         managerUi = FindObjectOfType<UiManager>();
+        mainCamera = Camera.main;
+        cameraMover = FindObjectOfType<CameraMover>();
+        isOut = false;
+        isMoving = false;
+        
     }
     private void Update()
     {
@@ -49,6 +52,9 @@ public class SpaceshipLauncher : MonoBehaviour
         if (isOut)
         {
             managerUi.DeathCanvas.enabled = true;
+            Time.timeScale = 0;
+            isOut = false;
+            SFXManager.Instance.playSFX(death);
             //non vuole funzionare
         }
 
@@ -125,6 +131,7 @@ public class SpaceshipLauncher : MonoBehaviour
 
             Time.timeScale = 0;
             managerUi.DeathCanvas.enabled = true;
+            SFXManager.Instance.playSFX(death);
         }
 
     }

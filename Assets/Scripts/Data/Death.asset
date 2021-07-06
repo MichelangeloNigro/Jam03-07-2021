@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: deb047d74036d3c43a53cea94b4ab03c, type: 3}
-  m_Name: BackgroundMusic
+  m_Name: Death
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: b1567ae49acdbde4f84d55247d30a85b, type: 3}
   priority: 128
-  volume: 0.5
+  volume: 1
   pitch: 1
   stereoPan: 0
   spatialBlend: 0

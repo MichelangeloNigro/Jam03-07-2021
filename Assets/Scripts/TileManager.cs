@@ -8,6 +8,7 @@ public class TileManager : MonoBehaviour
     public GameObject lastTile;
     [SerializeField]float offestX;
     public Transform parent;
+    
 
     
 
