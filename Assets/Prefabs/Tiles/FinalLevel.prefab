@@ -322,6 +322,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ice-Planet
       objectReference: {fileID: 0}
+    - target: {fileID: 8742500558839608311, guid: 13404a121705baa46a1c431cae4df6a0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Planet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13404a121705baa46a1c431cae4df6a0, type: 3}
 --- !u!4 &9086706369030421578 stripped
@@ -344,28 +349,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4175478312930186217, guid: fa444e91cf318c141879029548081031,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.16256289
-      objectReference: {fileID: 0}
-    - target: {fileID: 4175478312930186217, guid: fa444e91cf318c141879029548081031,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.16256289
-      objectReference: {fileID: 0}
-    - target: {fileID: 4175478312930186217, guid: fa444e91cf318c141879029548081031,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.32512578
-      objectReference: {fileID: 0}
-    - target: {fileID: 4175478312930186217, guid: fa444e91cf318c141879029548081031,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.95
       objectReference: {fileID: 0}
     - target: {fileID: 4175478312930186217, guid: fa444e91cf318c141879029548081031,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.09
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4175478312930186217, guid: fa444e91cf318c141879029548081031,
         type: 3}
@@ -411,11 +401,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: earth-like (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4175478312930186231, guid: fa444e91cf318c141879029548081031,
-        type: 3}
-      propertyPath: m_TagString
-      value: Atmosphere
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa444e91cf318c141879029548081031, type: 3}
@@ -1059,28 +1044,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1569065866098031632, guid: 991f97786acf656479438a16156e8820,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.20458739
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569065866098031632, guid: 991f97786acf656479438a16156e8820,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.20458739
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569065866098031632, guid: 991f97786acf656479438a16156e8820,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.40917477
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569065866098031632, guid: 991f97786acf656479438a16156e8820,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.209631
       objectReference: {fileID: 0}
     - target: {fileID: 1569065866098031632, guid: 991f97786acf656479438a16156e8820,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.477859
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1569065866098031632, guid: 991f97786acf656479438a16156e8820,
         type: 3}

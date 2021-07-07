@@ -15,7 +15,7 @@ public class TutorialManager : MonoBehaviour
     private void Update()
     {
         if (tutorialActivate) {
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            if (Input.GetKeyDown(KeyCode.Space)||(Input.touchCount>0)) {
                 Time.timeScale = 1f;
                 showTutorial.gameObject.SetActive(false);
                 tutorialActivate = false;

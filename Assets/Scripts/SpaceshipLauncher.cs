@@ -63,7 +63,7 @@ public class SpaceshipLauncher : MonoBehaviour
     {
         if (canJump)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space)|| (Input.touchCount>0))
             {
                 Debug.Log("LAUNCH");
                 canJump = false;
@@ -143,10 +143,8 @@ public class SpaceshipLauncher : MonoBehaviour
         var x = Mathf.Deg2Rad * this.gameObject.transform.eulerAngles.z;      
         var cos = (Mathf.Sin(x));
 
-        Debug.Log(cos);
         while ( (1-Mathf.Abs(cos)>0.001f) || cos>0 )
         {
-            Debug.Log(cos);
             x = Mathf.Deg2Rad * this.gameObject.transform.eulerAngles.z;
             if (x > 360) {
                 x = 0;
