@@ -55,6 +55,7 @@ public class SpaceshipLauncher : MonoBehaviour
             Time.timeScale = 0;
             isOut = false;
             SFXManager.Instance.playSFX(death);
+            dreamloLeaderBoard.Instance.AddScore(PlayerPrefs.GetString("Name"), PlayerPrefs.GetInt("Highscore"));
             //non vuole funzionare
         }
 
@@ -132,6 +133,7 @@ public class SpaceshipLauncher : MonoBehaviour
             Time.timeScale = 0;
             managerUi.DeathCanvas.enabled = true;
             SFXManager.Instance.playSFX(death);
+            dreamloLeaderBoard.Instance.AddScore(PlayerPrefs.GetString("Name"), PlayerPrefs.GetInt("Highscore"));
         }
 
     }

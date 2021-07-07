@@ -14,7 +14,7 @@ public class CameraMover : MonoBehaviour
     }
     public IEnumerator Slide()
     {
-        while (transform.position.x < manager.lastTile.transform.position.x+0.01f)
+        while (transform.position.x < manager.lastTile.transform.position.x+5f)
         {
             player.canJump = false;
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
