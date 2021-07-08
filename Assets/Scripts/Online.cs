@@ -7,7 +7,7 @@ public class Online : MonoBehaviour
     public GameObject content;
     public GameObject text;
     public dreamloLeaderBoard db;
-    List<dreamloLeaderBoard.Score> punteggi = new List<dreamloLeaderBoard.Score>();
+    public List<dreamloLeaderBoard.Score> punteggi = new List<dreamloLeaderBoard.Score>();
 
     private void Awake()
     {
