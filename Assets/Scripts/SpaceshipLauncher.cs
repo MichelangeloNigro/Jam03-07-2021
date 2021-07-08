@@ -55,7 +55,7 @@ public class SpaceshipLauncher : MonoBehaviour
             Time.timeScale = 0;
             isOut = false;
             SFXManager.Instance.playSFX(death);
-            dreamloLeaderBoard.Instance.AddScore(PlayerPrefs.GetString("Name"), PlayerPrefs.GetInt("Highscore"));
+           dreamloLeaderBoard.Instance.AddScore(PlayerPrefs.GetString("Name"), PlayerPrefs.GetInt("Highscore"));
             //non vuole funzionare
         }
 
@@ -118,10 +118,19 @@ public class SpaceshipLauncher : MonoBehaviour
             if (!collision.gameObject.GetComponent<PlanetController>().isvisit) {
                 managerUi.points += 100;
             }
+            if (collision.gameObject.GetComponent<PlanetController>().Reverse)
+            {
+                player.angle = -Mathf.Abs(player.angle);
+            }
+            if (!collision.gameObject.GetComponent<PlanetController>().Reverse)
+            {
+                player.angle = Mathf.Abs(player.angle);
+            }
             if (!collision.gameObject.GetComponent<PlanetController>().endingPlanet)
             {
                 EnterAtmosphere(collision);
             }
+            
             else
             {
                 EnterFinalPlanet(collision);

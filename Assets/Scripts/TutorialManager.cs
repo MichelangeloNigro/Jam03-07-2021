@@ -25,7 +25,7 @@ public class TutorialManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerController>()) {
+        if (collision.GetComponent<PlayerController>()&&collision.CompareTag("Player")) {
             tutorialActivate = true;
             Time.timeScale = 0;
             showTutorial.SetActive(true);

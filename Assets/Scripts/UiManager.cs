@@ -40,7 +40,7 @@ public class UiManager : MonoBehaviour
 
     public void Restart() {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
     }
     public void exit()
     {

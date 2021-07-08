@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 axis;//by which axis it will rotate. x,y or z.
 
     [Header("Velocità di rotazione")]
-    public float angle; //or the speed of rotation.
+   public float angle; //or the speed of rotation.
     float oldPoint;
     UiManager managerUi;
 

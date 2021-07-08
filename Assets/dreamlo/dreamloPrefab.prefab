@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 400000}
   - component: {fileID: 11400000}
-  - component: {fileID: 1190102124}
   m_Layer: 0
   m_Name: dreamloPrefab
   m_TagString: Untagged
@@ -47,17 +46,4 @@ MonoBehaviour:
   IUpgradedAndGotSSL: 0
   privateCode: ieZXXVGiW06UdzyHmTi84wNYrAfU1VqEek0DVxMoePfA
   publicCode: 60e61e9f8f40bb114c6c007a
---- !u!114 &1190102124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b5adf67ff724e45948bbac8c7f13aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 0}
-  text: {fileID: 3008797332245600176, guid: c6c2b87b8578a1d478cc3127a1f99cd5, type: 3}
+  highScores: 

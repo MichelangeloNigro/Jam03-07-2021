@@ -9,7 +9,7 @@ public class Online : MonoBehaviour
     public dreamloLeaderBoard db;
     public List<dreamloLeaderBoard.Score> punteggi = new List<dreamloLeaderBoard.Score>();
 
-    private void Awake()
+    private void Start()
     {
         db.AddScore("pippo", 0);
 

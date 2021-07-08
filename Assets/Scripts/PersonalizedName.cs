@@ -17,7 +17,6 @@ public class PersonalizedName : MonoBehaviour
             nickname.text = PlayerPrefs.GetString("Name");
             nickname.interactable = false;
             play.interactable = true;
-           
         }
     }
     public void Name(string name)
