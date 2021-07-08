@@ -1,20 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] PlayerController player;
+    private PlayerController player;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-     
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        GetComponent<PlayerController>().angle = player.angle;
+        GetComponent<PlayerController>().angle = player.GetComponent<PlayerController>().angle;
     }
 }
