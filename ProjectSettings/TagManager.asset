@@ -8,6 +8,7 @@ TagManager:
   - BlackHole
   - Planet
   - Launch
+  - PowerUp
   layers:
   - Default
   - TransparentFX

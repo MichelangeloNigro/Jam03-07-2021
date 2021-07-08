@@ -144,6 +144,11 @@ public class SpaceshipLauncher : MonoBehaviour
             SFXManager.Instance.playSFX(death);
             dreamloLeaderBoard.Instance.AddScore(PlayerPrefs.GetString("Name"), PlayerPrefs.GetInt("Highscore"));
         }
+        if (collision.CompareTag("PowerUp"))
+        {
+            Destroy(collision.gameObject);
+            player.angle -= 2;
+        }
 
     }
 

@@ -6,6 +6,8 @@ public class TutorialManager : MonoBehaviour
 {
     bool tutorialActivate;
     public GameObject showTutorial;
+    public Text testo;
+    public string text;
 
     private void Start()
     {
@@ -15,6 +17,7 @@ public class TutorialManager : MonoBehaviour
     private void Update()
     {
         if (tutorialActivate) {
+            testo.text = text;
             if (Input.GetKeyDown(KeyCode.Space)||(Input.touchCount>0)) {
                 Time.timeScale = 1f;
                 showTutorial.gameObject.SetActive(false);

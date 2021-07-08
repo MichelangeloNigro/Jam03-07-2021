@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     void IncreseSpeed() {
         if (oldPoint != managerUi.points) {
             oldPoint = managerUi.points;
-            angle += 3f;
+            angle += 5f;
         }
     }
 }
