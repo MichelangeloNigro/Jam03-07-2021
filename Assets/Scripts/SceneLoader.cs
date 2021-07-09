@@ -8,7 +8,8 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadNextScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        Loading.scenteToLoad = "SampleScene";
+        SceneManager.LoadScene("Loading");
     }
 
     public void ExitApplication()
