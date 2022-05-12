@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : SingletonDDOl<AudioManager>
 {
 
     public AudioSource source;
-    
+    public AudioMixer mixer;
 
     private void Start()
     {
@@ -54,6 +56,10 @@ public class AudioManager : SingletonDDOl<AudioManager>
         source.volume = value;
         source.mute = false;
     }
+    public void ChangeVolume(float i) {
+        mixer.SetFloat("Volume", i);
+    }
 }
+
 
 

@@ -203,6 +203,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 282844449268029226, guid: 1a93c3a0063a9594a90d33c720c3a6dc,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1337427106}
+    - target: {fileID: 282844449268029226, guid: 1a93c3a0063a9594a90d33c720c3a6dc,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 745984220226442040, guid: 1a93c3a0063a9594a90d33c720c3a6dc,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1474,6 +1484,7 @@ GameObject:
   - component: {fileID: 1337427103}
   - component: {fileID: 1337427104}
   - component: {fileID: 1337427105}
+  - component: {fileID: 1337427106}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1605,6 +1616,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 1337427104}
+--- !u!114 &1337427106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337427102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5a37917a3635149859c9217b0e981b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 1337427104}
+  mixer: {fileID: 24100000, guid: 5c02143125413cc4fb72fa91e1295797, type: 2}
 --- !u!1001 &1396374034
 PrefabInstance:
   m_ObjectHideFlags: 0
